@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.0"
+	client="site"
+	method="upgrade">
+	<name>Waka Waka</name>
+	<author>Abhiram Mishra</author>
+	<creationDate>Dec 07, 2010</creationDate>
+	<copyright>Copyright (C) 2008 - 2010 NetQ Creative Software. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>bullraider@bullraider.com</authorEmail>
+	<authorUrl>http://www.bullraider.com</authorUrl>
+	<version>1.5.1</version>
+	<description>MODULE_DESCRIPTION</description>
+	<files>
+		<filename module="mod_wakawaka">mod_wakawaka.php</filename>
+		<filename>index.html</filename>
+		<filename>images/google-doodle.jpg</filename>
+		
+		<filename>tmpl/index.html</filename>
+		<filename>tmpl/default.php</filename>
+	</files>
+</extension>

@@ -17,57 +17,56 @@ width:100px;
 height:100px;
 display:block;
 margin:40px;
+position: relative;
 }
 </style>
 <?php
 
 	$js='jQuery(document).ready(function(){
+	var xy=jQuery(\'#img\').offset();
 jQuery(document).mousemove(function(event){
 var mouseX = event.pageX;
 var mouseY = event.pageY;
-console.log(mouseX,mouseY);
-var xy=jQuery(\'img\').getPosition();
-
 //stare top
-if(mouseX >xy.x && mouseX < xy.x+100 && mouseY>0 && mouseY<xy.y)
+if(mouseX >xy.left && mouseX < (xy.left+100) && mouseY>0 && mouseY<xy.top)
 {
 document.getElementById(\'img\').style.backgroundPosition="510px 0px";
 }
 //stare at me
-if(mouseX >xy.x && mouseX < xy.x+100 && mouseY>xy.y && mouseY<xy.y+100)
+if(mouseX >xy.left && mouseX < (xy.left+100) && mouseY>xy.top && mouseY<(xy.top+100))
 {
 document.getElementById(\'img\').style.backgroundPosition="510px 205px";
 }
 //stare bottom;
-if(mouseX >xy.x && mouseX < xy.x+100 && mouseY>xy.y+100)
+if(mouseX >xy.left && mouseX < (xy.left+100) && mouseY>(xy.top+100))
 {
 document.getElementById(\'img\').style.backgroundPosition="510px 101px";
 }
 
 //stare top  left
-if(mouseX>0 && mouseX<xy.x && mouseY>0 && mouseY<xy.y){
+if(mouseX>0 && mouseX<xy.left && mouseY>0 && mouseY<xy.top){
 document.getElementById(\'img\').style.backgroundPosition="616px 306px";
 }
 //stare left
-if(mouseX>0 && mouseX<xy.x && mouseY<xy.y+100 && mouseY > xy.y ){
+if(mouseX>0 && mouseX<xy.left && mouseY<(xy.top+100) && mouseY > xy.top ){
 document.getElementById(\'img\').style.backgroundPosition="616px 205px";
 }
 //starre bottom left
-if(mouseX>0 && mouseX<xy.x && mouseY>xy.y+100){
+if(mouseX>0 && mouseX<xy.left && mouseY>(xy.top+100)){
 document.getElementById(\'img\').style.backgroundPosition="616px 101px";
 }
 
 
 //stare right
-if(mouseX>xy.x+100 && mouseY<xy.y+100 && mouseY>xy.y){
+if(mouseX>xy.left+100 && mouseY<xy.top+100 && mouseY>xy.top){
 document.getElementById(\'img\').style.backgroundPosition="408px 205px";
 }
 //stare top right
-if(mouseX>xy.x+100 && mouseY>0 && mouseY<xy.y){
+if(mouseX>xy.left+100 && mouseY>0 && mouseY<xy.top){
 document.getElementById(\'img\').style.backgroundPosition="408px 306px";
 }
 
-if(mouseX>xy.x+100 && mouseY>0 && mouseY>xy.y+100){
+if(mouseX>xy.left+100 && mouseY>0 && mouseY>xy.top+100){
 document.getElementById(\'img\').style.backgroundPosition="408px 101px";
 }
 
